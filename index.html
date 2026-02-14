@@ -135,8 +135,14 @@ audio.id = "bgMusic";
 document.body.appendChild(audio);
 
 hearts();
+  
 }
-
+function playMusic(){
+let audio = document.getElementById("bgMusic");
+if(audio){
+audio.play();
+}
+}
 
 
 // RUNAWAY BUTTON
@@ -161,5 +167,6 @@ setTimeout(()=>heart.remove(),5000);
 </script>
 </body>
 </html>
+
 
 
