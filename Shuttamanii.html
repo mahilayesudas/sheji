@@ -114,18 +114,25 @@ document.getElementById("card").innerHTML =
 
 // YES PAGE 🎌
 function yes(){
+
 document.getElementById("card").innerHTML =
 `<h1>YAYYYYY 😭💖</h1>
 <p>You just made me the happiest person ever!</p>
 
-<p>Me and my shuttamani in every universe🐼🐻</p>
+<img id="bearPic" src="cat.jpg">
+<p>Me and my shuttamani in every universe 🐻‍❄️🐻</p>
 
 <h3>Valentine Date Unlocked 💕</h3>
 
-<audio autoplay loop>
-<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_9c9e6c7d4c.mp3?filename=romantic-love-112199.mp3" type="audio/mp3">
-</audio>
+<button onclick="playMusic()">Play Romantic Music 🎶</button>
 `;
+
+// create music player AFTER click (phone safe)
+let audio = document.createElement("audio");
+audio.src = "Kadhal_Sadugudu.mp3";
+audio.loop = true;
+audio.id = "bgMusic";
+document.body.appendChild(audio);
 
 hearts();
 }
@@ -154,3 +161,4 @@ setTimeout(()=>heart.remove(),5000);
 </script>
 </body>
 </html>
+
