@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8"> <!-- THIS FIXES EMOJIS -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- MOBILE -->
+
+<title>For You ❤️</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:linear-gradient(135deg,#ff7eb3,#ff758c);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+color:#333;
+text-align:center;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:20px;
+width:90%;
+max-width:380px;
+box-shadow:0 15px 35px rgba(0,0,0,0.2);
+}
+
+button{
+padding:12px 20px;
+margin:10px;
+border:none;
+border-radius:8px;
+font-size:16px;
+cursor:pointer;
+background:#ff4f87;
+color:white;
+}
+
+#no{
+position:absolute;
+background:#ccc;
+color:black;
+}
+
+img{
+width:220px;
+border-radius:15px;
+margin-top:15px;
+}
+
+.heart{
+position:fixed;
+font-size:22px;
+animation:float 5s linear infinite;
+}
+
+@keyframes float{
+from{ transform:translateY(100vh); opacity:1;}
+to{ transform:translateY(-10vh); opacity:0;}
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="card" id="card">
+<h2> Ente Shuttamani❤️</h2>
+<p>I made something for you...</p>
+<button onclick="start()">Open</button>
+</div>
+
+<script>
+
+// ⭐ EDIT THIS
+let name = "Mr. Shuttamani";
+
+// STORY FLOW
+function start(){
+document.getElementById("card").innerHTML =
+`<h2>Question 1 🥺</h2>
+<p>Can I annoy you for the rest of our life? </p>
+<button onclick="q2()">Yes</button>
+<button onclick="q2()">Of course</button>`;
+}
+
+function q2(){
+document.getElementById("card").innerHTML =
+`<h2>Question 2 😊</h2>
+<p>Are you ready to eat the delicious food I make for you? </p>
+<button onclick="q3()">Yes</button>
+<button onclick="q3()">Defintely</button>`;
+}
+
+function q3(){
+document.getElementById("card").innerHTML =
+`<h2>Question 3 💕</h2>
+<p>Should we make more cute memories together?</p>
+<button onclick="finalQ()">YES</button>
+<button onclick="finalQ()">Obviously</button>`;
+}
+
+function finalQ(){
+document.getElementById("card").innerHTML =
+`<h2>Final Question 💘</h2>
+<h3>Will you be my Valentine, ${name}? ❤️</h3>
+<button onclick="yes()">YES 💖</button>
+<button id="no" onmouseover="move()">No 🙈</button>`;
+}
+
+// YES PAGE 🎌
+function yes(){
+document.getElementById("card").innerHTML =
+`<h1>YAYYYYY 😭💖</h1>
+<p>You just made me the happiest person ever!</p>
+
+<p>Me and my shuttamani in every universe🐼🐻</p>
+
+<h3>Valentine Date Unlocked 💕</h3>
+
+<audio autoplay loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_9c9e6c7d4c.mp3?filename=romantic-love-112199.mp3" type="audio/mp3">
+</audio>
+`;
+
+hearts();
+}
+
+
+
+// RUNAWAY BUTTON
+function move(){
+let btn=document.getElementById("no");
+btn.style.top=Math.random()*80+"%";
+btn.style.left=Math.random()*80+"%";
+}
+
+// FLOATING HEARTS
+function hearts(){
+setInterval(()=>{
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="💖";
+heart.style.left=Math.random()*100+"vw";
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),5000);
+},200);
+}
+
+</script>
+</body>
+</html>
